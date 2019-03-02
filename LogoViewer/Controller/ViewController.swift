@@ -21,13 +21,28 @@ class ViewController: UIViewController {
     }
 
     @IBAction func search() {
-        LogoService.shared.getLogo(domain: "gamekult.com") { (success, data) in
+        toggleActivityIndicator(shown: true)
+        LogoService.shared.getLogo(domain: getDomain()) { (success, data) in
             if success, let data = data {
                 self.logoImageView.image = UIImage(data: data)
             } else {
                 self.presentAlert()
             }
+            self.toggleActivityIndicator(shown: false)
         }
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        domainTextField.resignFirstResponder()
+    }
+    
+    
+    private func getDomain() -> String {
+        let text = domainTextField.text
+        if text == "" {
+            return "openclassrooms.com"
+        }
+        return text!
     }
     
     private func presentAlert() {
@@ -45,3 +60,9 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
