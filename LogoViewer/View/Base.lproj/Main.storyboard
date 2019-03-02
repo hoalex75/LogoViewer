@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,73 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LogoViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="as7-N6-C5K">
+                                <rect key="frame" x="177.5" y="623" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQ9-dJ-QdO">
+                                <rect key="frame" x="20" y="614" width="335" height="38"/>
+                                <color key="backgroundColor" red="0.968959868" green="0.35584176080000002" blue="0.26828693269999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="search" destination="BYZ-38-t0r" eventType="touchUpInside" id="pMl-Lc-PSj"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="li0-8z-BTk">
+                                <rect key="frame" x="15" y="161" width="345" height="345"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="li0-8z-BTk" secondAttribute="height" multiplier="1:1" id="pwh-f3-dOn"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mAq-ZG-Pbb">
+                                <rect key="frame" x="20" y="35" width="335" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search companies logos by domain name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZI-bD-q8O">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Openclassrooms.com" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nog-h5-Hi3">
+                                        <rect key="frame" x="0.0" y="16" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="url"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AQ9-dJ-QdO" secondAttribute="trailing" constant="20" id="C5H-t8-ngO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="li0-8z-BTk" secondAttribute="trailing" constant="15" id="D4O-G5-vSc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mAq-ZG-Pbb" secondAttribute="trailing" constant="20" id="HqD-RA-xTh"/>
+                            <constraint firstItem="li0-8z-BTk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="OXk-ey-Hs7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AQ9-dJ-QdO" secondAttribute="bottom" constant="15" id="SoH-YW-XZw"/>
+                            <constraint firstItem="li0-8z-BTk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XM7-yh-gvZ"/>
+                            <constraint firstItem="as7-N6-C5K" firstAttribute="centerY" secondItem="AQ9-dJ-QdO" secondAttribute="centerY" id="Y7X-kZ-aVD"/>
+                            <constraint firstItem="mAq-ZG-Pbb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="bLW-kh-XRc"/>
+                            <constraint firstItem="AQ9-dJ-QdO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l1Y-v5-QBh"/>
+                            <constraint firstItem="as7-N6-C5K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l8g-yc-YY2"/>
+                            <constraint firstItem="mAq-ZG-Pbb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z9H-J2-8Hb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="as7-N6-C5K" id="7ab-zl-rwO"/>
+                        <outlet property="domainTextField" destination="nog-h5-Hi3" id="0YY-3h-5wO"/>
+                        <outlet property="logoImageView" destination="li0-8z-BTk" id="1Nf-Zf-rJF"/>
+                        <outlet property="searchButton" destination="AQ9-dJ-QdO" id="j2q-W6-J0j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

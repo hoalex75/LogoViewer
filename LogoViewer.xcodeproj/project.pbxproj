@@ -12,6 +12,7 @@
 		FABB9ACE222B041500D131E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB9ACC222B041500D131E0 /* Main.storyboard */; };
 		FABB9AD0222B041800D131E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABB9ACF222B041800D131E0 /* Assets.xcassets */; };
 		FABB9AD3222B041800D131E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB9AD1222B041800D131E0 /* LaunchScreen.storyboard */; };
+		FABB9ADF222B188D00D131E0 /* LogoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB9ADE222B188D00D131E0 /* LogoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FABB9ACF222B041800D131E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FABB9AD2222B041800D131E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FABB9AD4222B041800D131E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABB9ADE222B188D00D131E0 /* LogoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		FABB9AC7222B041500D131E0 /* LogoViewer */ = {
 			isa = PBXGroup;
 			children = (
-				FABB9AC8222B041500D131E0 /* AppDelegate.swift */,
-				FABB9ACA222B041500D131E0 /* ViewController.swift */,
+				FABB9ADA222B042B00D131E0 /* Model */,
+				FABB9ADB222B043400D131E0 /* View */,
+				FABB9ADC222B044200D131E0 /* Controller */,
+				FABB9ADD222B045200D131E0 /* Supporting Files */,
+			);
+			path = LogoViewer;
+			sourceTree = "<group>";
+		};
+		FABB9ADA222B042B00D131E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FABB9ADE222B188D00D131E0 /* LogoService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FABB9ADB222B043400D131E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				FABB9ACC222B041500D131E0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FABB9ADC222B044200D131E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FABB9ACA222B041500D131E0 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FABB9ADD222B045200D131E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FABB9AC8222B041500D131E0 /* AppDelegate.swift */,
 				FABB9ACF222B041800D131E0 /* Assets.xcassets */,
 				FABB9AD1222B041800D131E0 /* LaunchScreen.storyboard */,
 				FABB9AD4222B041800D131E0 /* Info.plist */,
 			);
-			path = LogoViewer;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABB9ADF222B188D00D131E0 /* LogoService.swift in Sources */,
 				FABB9ACB222B041500D131E0 /* ViewController.swift in Sources */,
 				FABB9AC9222B041500D131E0 /* AppDelegate.swift in Sources */,
 			);
@@ -284,7 +320,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 529LRG4ZS2;
-				INFOPLIST_FILE = LogoViewer/Info.plist;
+				INFOPLIST_FILE = "LogoViewer/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +329,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.alexandreholet.LogoViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +339,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 529LRG4ZS2;
-				INFOPLIST_FILE = LogoViewer/Info.plist;
+				INFOPLIST_FILE = "LogoViewer/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fr.alexandreholet.LogoViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
